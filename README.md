@@ -235,6 +235,10 @@ Now, to ensure you nodes were loaded correctly, just instantiate and play with t
 ## mynodepack
 
 
+### Installation
+
+Install this node pack with `pip install mynodepack`. Then you'll be able to use it within the [nodezator app](https://github.com/IndiePython/nodezator) by adding `mynodepack` as an installed node pack, as explaned in the [manual](https://manual.nodezator.com/ch-loading-nodes.html).
+
 ### Purpose
 
 The nodes in this node pack are dummy nodes used only to provide a demonstration of how to setup and upload a node pack to PyPI or TestPyPI. Even so, effort was taken to create meaningful nodes, that is, their operations are actually useful/make sense.
