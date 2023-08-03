@@ -1,6 +1,10 @@
 
-### third-party import
+### third-party imports
+
 from pygame import Surface
+
+from pygame.math import Vector2
+
 
 
 OPTIONS = (
@@ -23,6 +27,7 @@ def get_combined_surfs(
     offset_pos_by: 'python_literal' = (0, 0),
 ) -> [{'name': 'surface', 'type': Surface}]:
     """Return new surface by combining surfs a and b."""
+
     rect_a = surf_a.get_rect()
     rect_b = surf_b.get_rect()
 
@@ -30,9 +35,13 @@ def get_combined_surfs(
     setattr(rect_a, pos_to_a, pos)
     rect_a.move_ip(offset_pos_by)
 
-    size = rect_a.union(rect_b).size
+    union = rect_a.union(rect_b)
 
-    surf = Surface(size).convert_alpha()
+    offset = -Vector2(union.topleft)
+    rect_a.move_ip(offset)
+    rect_b.move_ip(offset)
+
+    surf = Surface(union.size).convert_alpha()
     surf.fill((0,)*4)
 
     surf.blit(surf_b, rect_b)
