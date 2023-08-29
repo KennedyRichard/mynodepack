@@ -50,7 +50,7 @@ The **setup.cfg** configuration file is where metadata for your project resides,
 ```cfg
 [metadata]
 name = mynodepack
-version = 1.0.0
+version = 1.0.2
 author = Kennedy Richard
 author_email = kennedy@kennedyrichard.com
 description = A template/example of how to package node packs
@@ -68,9 +68,9 @@ classifiers =
 
 [options]
 packages = find:
-python_requires = >=3.6
+python_requires = >=3.7
 install_requires =
-    pygame
+    pygame-ce
 ```
 
 Let's go over each configuration in the file contents above and additional possibilities.
@@ -90,7 +90,7 @@ Let's go over each configuration in the file contents above and additional possi
 | `classifiers` | use classifiers that apply to your project, the full list can be found [here](https://pypi.org/classifiers/) |
 | `packages` | `find:` means the packaging software will discover the modules for you; leave this as-is |
 | `python_requires` | replace the python version by the minimum Python version your code supports |
-| `install_requires` | if any node imports an third-party module, you must list it here (or delete this configuration if you don't use any); we use [pygame](https://pygame.org) in nodes from our `geometry_drawings` category, so we list it here |
+| `install_requires` | if any node imports an third-party module, you must list it here (or delete this configuration if you don't use any); we use [pygame-ce](https://pyga.me) in nodes from our `geometry_drawings` category, so we list it here |
 
 
 Finally the **README.md** must contain info about your node pack. Here in this README.md file, instead of just presenting the nodes in this example node pack, most of the content is about explaining how to setup your own node pack, upload and install it, since it is the purpose of this repository. However, after you copy this file into your own package folder, you should delete its contents and only talk about the nodes in your node pack.
@@ -252,7 +252,7 @@ Below we provide a brief summary of each category and the nodes it contains.
 | Category | Description |
 |----------|-------------|
 | `formula` | In mathematics, a formula is a fact, rule, or principle that is expressed in terms of mathematical symbols. Nodes in this category return specific values calculated using known mathematical formulas |
-| `geometry_drawings` | Nodes from this category use [pygame](https://pygame.org) to create surfaces with shapes drawn on them or modify/visualize/save such surfaces |
+| `geometry_drawings` | Nodes from this category use [pygame-ce](https://pyga.me) to create surfaces with shapes drawn on them or modify/visualize/save such surfaces |
 
 
 | Node | Description |
